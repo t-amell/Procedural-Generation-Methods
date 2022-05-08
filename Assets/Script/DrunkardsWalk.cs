@@ -8,15 +8,17 @@ public class DrunkardsWalk : MonoBehaviour
     public Transform floorHier;
 
     // Starting position
-    public Vector2 currentPos;
+    private Vector2 currentPos;
     // Seperate Actors to perform set actions
     public int actors = 5;
     // Actor individual steps
     public int actorSteps = 15;
+
+    // Speed of floor activation showcase
+    public float activationSpeed = .01f;
+
     // Optional seed var
     public int seed = 0;
-    // Speed of floor creation showcase
-    public float floorShowSpeed = .01f;
 
     // Start is called before the first frame update
     void Start()
@@ -45,16 +47,7 @@ public class DrunkardsWalk : MonoBehaviour
                 }
             }
         }
-        StartCoroutine(ActivateFloors());
-    }
-
-    // Activate floors in order of creation to showcase creation path
-    IEnumerator ActivateFloors(){
-        foreach (Transform floor in floorHier)
-        {
-            floor.gameObject.SetActive(true);
-            yield return new WaitForSeconds(floorShowSpeed);
-        }
+        StartCoroutine(Utility.ChangeFloorState(activationSpeed, true));
     }
 
     // Place floor gameObject

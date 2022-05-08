@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 794917045}
   m_Layer: 0
   m_Name: FloorSet
-  m_TagString: Untagged
+  m_TagString: FloorHierarchy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -339,6 +339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1270947688}
   - component: {fileID: 1270947687}
+  - component: {fileID: 1270947689}
   m_Layer: 0
   m_Name: GenerationManager
   m_TagString: Untagged
@@ -353,18 +354,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270947686}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3803814224683f3498800f323479f910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   floorTemplate: {fileID: 3552342061018096936, guid: 55406398ed5bfef499082eb986f09732, type: 3}
   floorHier: {fileID: 794917045}
-  currentPos: {x: 0, y: 0}
   actors: 5
   actorSteps: 125
+  activationSpeed: 0.01
   seed: 0
-  floorShowSpeed: 0.01
 --- !u!4 &1270947688
 Transform:
   m_ObjectHideFlags: 0
@@ -379,3 +379,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1270947689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270947686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396751a09c13d4a8a8aa213084c521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorTemplate: {fileID: 3552342061018096936, guid: 55406398ed5bfef499082eb986f09732, type: 3}
+  floorHier: {fileID: 794917045}
+  floorNum: 500
+  activationSpeed: 0.01
+  seed: 1
